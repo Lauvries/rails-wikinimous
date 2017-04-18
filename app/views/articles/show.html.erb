@@ -1,0 +1,9 @@
+<% article_title = Kramdown::Document.new(@article.title).to_html %>
+<% article_content = Kramdown::Document.new(@article.content).to_html %>
+
+<h2><%= article_title.html_safe %></h2>
+<p><%= article_content.html_safe %></p>
+
+<%= link_to 'Edit', edit_article_path(@article) %>
+<%= link_to 'Delete', article_path(@article), method: 'delete' %>
+<%= link_to 'Back to articles', articles_path %>
